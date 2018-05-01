@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar text-center color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+          <ion-buttons end>
+          <button ion-button icon-only (click)="action1()">
+              <ion-icon name="add"></ion-icon>
+          </button>
+
+          <button ion-button icon-only (click)="action2()">
+              <ion-icon name="chatbubbles"></ion-icon>
+          </button>
+    </ion-buttons>
+    <ion-title>הפועל באר שבע</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content >
+  <ion-card text-center *ngFor="let g of game | async">
+
+  <ion-card-header style="color:white;background-color: #f53d3d;padding: 8px">
+    הרשמה פתוחה
+  </ion-card-header>
+
+  <ion-card-content text-center>
+    <ion-item text-center  text-wrap>
+
+    <h2 style="text-align: right">נפתחה הרשמה ל {{g.place}} </h2>
+    <p style="text-align: right">בשעה {{g.time}}</p>
+    <p style="text-align: right">בתאריך {{g.date}}</p>
+    <br>
+    <p style="text-align: right">{{g.des}}</p>
+    
+    </ion-item>
+
+  </ion-card-content>
+
+    <button ion-item style="text-align: right">
+      <ion-icon name="football" item-right></ion-icon>
+      שמור מקום
+    </button>
+    
+    <button ion-item style="text-align: right">
+      <ion-icon name="add" item-right></ion-icon>
+      בקש פלוס
+    </button>
+
+</ion-card>
+
+  <ion-item-divider text-center>
+   ? מה חדש
+  </ion-item-divider>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar text-center color="danger">   
+    <button ion-button menuToggle (click)="signout()">
+      <ion-icon name="exit"></ion-icon>
+    </button>
+    
+      <ion-title>משרדים</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-item text-center>
+      
+        <ion-avatar item-right>
+          <img class="profileimage" src="http://placehold.it/150">
+        </ion-avatar>
+      
+
+        <h2 style="text-align: right">טל ויצמן</h2>
+        <h3 style="text-align: right">כינוי : טל מכנסיים</h3>
+   </ion-item>
+
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
